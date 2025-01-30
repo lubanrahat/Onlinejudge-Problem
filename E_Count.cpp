@@ -16,14 +16,20 @@ int main()
   std::ios::sync_with_stdio(false);
   std::cin.tie(0);
 
-  long long n,m;
-  cin>>n>>m;
+  string S;
+  cin>>S;
 
-  int nLastDigit,mLastDigit;
-  nLastDigit=n%10;
-  mLastDigit=m%10;
+  stringstream ss(S);
+  int n,sum = 0;
+  ss >> n;
 
-  cout<<nLastDigit+mLastDigit<<'\n';
+  while(n!=0) {
+    int digit = n%10;
+    sum += digit;
+    n/=10;
+  }
+
+  cout<<sum;
 
   return 0;
 }

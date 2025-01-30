@@ -16,14 +16,14 @@ int main()
   std::ios::sync_with_stdio(false);
   std::cin.tie(0);
 
-  long long n,m;
-  cin>>n>>m;
+  int a1,b1,a2,b2;
+  cin>>a1>>b1>>a2>>b2;
 
-  int nLastDigit,mLastDigit;
-  nLastDigit=n%10;
-  mLastDigit=m%10;
-
-  cout<<nLastDigit+mLastDigit<<'\n';
+  if(max(a1,a2)>min(b1,b2)) {
+    cout<<-1;
+  }else {
+    cout<<max(a1,a2)<<" "<<min(b1,b2);
+  }
 
   return 0;
 }

@@ -16,14 +16,16 @@ int main()
   std::ios::sync_with_stdio(false);
   std::cin.tie(0);
 
-  long long n,m;
-  cin>>n>>m;
+  char ch;
+  cin>>ch;
 
-  int nLastDigit,mLastDigit;
-  nLastDigit=n%10;
-  mLastDigit=m%10;
-
-  cout<<nLastDigit+mLastDigit<<'\n';
+  if(ch>='A' && ch<='Z') {
+    cout<<"ALPHA\n"<<"IS CAPITAL\n";
+  }else if(ch>='0' && ch <='9') {
+    cout<<"IS DIGIT\n";
+  }else {
+    cout<<"ALPHA\n"<<"IS SMALL\n";
+  }
 
   return 0;
 }

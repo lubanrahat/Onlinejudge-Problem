@@ -16,14 +16,13 @@ int main()
   std::ios::sync_with_stdio(false);
   std::cin.tie(0);
 
-  long long n,m;
-  cin>>n>>m;
+  int a,b;
+  cin>>a>>b;
 
-  int nLastDigit,mLastDigit;
-  nLastDigit=n%10;
-  mLastDigit=m%10;
-
-  cout<<nLastDigit+mLastDigit<<'\n';
-
+  if(a-b==1 || b-a==1 || (a==b && a!=0 && b!=0)) {
+    cout<<"YES\n";
+  }else {
+    cout<<"NO\n";
+  }
   return 0;
 }

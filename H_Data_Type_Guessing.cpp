@@ -16,14 +16,19 @@ int main()
   std::ios::sync_with_stdio(false);
   std::cin.tie(0);
 
-  long long n,m;
-  cin>>n>>m;
+  double n,k,a;
+  cin>>n>>k>>a;
 
-  int nLastDigit,mLastDigit;
-  nLastDigit=n%10;
-  mLastDigit=m%10;
-
-  cout<<nLastDigit+mLastDigit<<'\n';
+  double result=(n*k)/a;
+  long long num=result;
+  double myResult=result-num;
+  if(myResult>0) {
+    cout<<"double\n";
+  }else if(num<=2147483647) {
+    cout<<"int\n";
+  }else {
+    cout<<"long long\n";
+  }
 
   return 0;
 }

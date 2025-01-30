@@ -16,14 +16,12 @@ int main()
   std::ios::sync_with_stdio(false);
   std::cin.tie(0);
 
-  long long n,m;
-  cin>>n>>m;
+  double R,area;
+  cin>>R;
 
-  int nLastDigit,mLastDigit;
-  nLastDigit=n%10;
-  mLastDigit=m%10;
-
-  cout<<nLastDigit+mLastDigit<<'\n';
+  double pi=3.141592653;
+  area=pi*R*R;
+  cout<<fixed<<setprecision(9)<<area<<'\n';
 
   return 0;
 }

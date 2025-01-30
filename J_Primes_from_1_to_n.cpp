@@ -10,20 +10,31 @@
 #include <iomanip>
 using namespace std;
 
+bool isPrime(int n) {
+  if(n<=1) return false;
+  for(int i=2;i<n;i++) {
+    if(n%i==0) {
+      return false;
+    }
+  }
+  return true;
+}
+
 int main()
 {
 
   std::ios::sync_with_stdio(false);
   std::cin.tie(0);
 
-  long long n,m;
-  cin>>n>>m;
+  int n;
+  cin>>n;
 
-  int nLastDigit,mLastDigit;
-  nLastDigit=n%10;
-  mLastDigit=m%10;
-
-  cout<<nLastDigit+mLastDigit<<'\n';
+  for(int i=2;i<n;i++) {
+    if(isPrime(i)) {
+      cout<<i<<" ";
+    }
+  }
+  cout<<endl;
 
   return 0;
 }

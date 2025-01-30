@@ -16,14 +16,23 @@ int main()
   std::ios::sync_with_stdio(false);
   std::cin.tie(0);
 
-  long long n,m;
-  cin>>n>>m;
+  int n,a,b;
+  cin>>n;
 
-  int nLastDigit,mLastDigit;
-  nLastDigit=n%10;
-  mLastDigit=m%10;
+  int arr[n+3];
 
-  cout<<nLastDigit+mLastDigit<<'\n';
+  for(int i=0;i<n;i++) {
+    cin>>arr[i];
+  }
+  cin>>a>>b;
+
+  long long sum = 0;
+
+  for(int i=a;i<=b;i++) {
+    sum += arr[i];
+  }
+
+  cout<<sum<<endl;
 
   return 0;
 }

@@ -9,6 +9,7 @@
 #include <sstream>
 #include <iomanip>
 using namespace std;
+#define ll long long
 
 int main()
 {
@@ -16,14 +17,19 @@ int main()
   std::ios::sync_with_stdio(false);
   std::cin.tie(0);
 
-  long long n,m;
-  cin>>n>>m;
-
-  int nLastDigit,mLastDigit;
-  nLastDigit=n%10;
-  mLastDigit=m%10;
-
-  cout<<nLastDigit+mLastDigit<<'\n';
+  int n,k;
+  cin>>n>>k;
+  int arr[n];
+  for(int i=0;i<n;i++) {
+    cin>>arr[i];
+  }
+  int kValue = arr[k-1],count = 0;
+  for(int i=0;i<n;i++) {
+    if(arr[i]>=kValue&&arr[i]!=0) {
+      count++;
+    }
+  }
+  cout<<count<<endl;
 
   return 0;
 }

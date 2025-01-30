@@ -16,14 +16,12 @@ int main()
   std::ios::sync_with_stdio(false);
   std::cin.tie(0);
 
-  long long n,m;
-  cin>>n>>m;
+  long long a,b,c,d,answer;
+  cin>>a>>b>>c>>d;
 
-  int nLastDigit,mLastDigit;
-  nLastDigit=n%10;
-  mLastDigit=m%10;
+  answer=(a*b)-(c*d);
 
-  cout<<nLastDigit+mLastDigit<<'\n';
+  cout<<"Difference = "<<answer<<'\n';
 
   return 0;
 }

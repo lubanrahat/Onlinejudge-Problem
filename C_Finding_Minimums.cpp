@@ -16,14 +16,19 @@ int main()
   std::ios::sync_with_stdio(false);
   std::cin.tie(0);
 
-  long long n,m;
-  cin>>n>>m;
+  int tt;
+  cin>>tt;
+  while(tt--) {
+    int n,k;
+    cin>>n,k;
 
-  int nLastDigit,mLastDigit;
-  nLastDigit=n%10;
-  mLastDigit=m%10;
+    for(int i=1;i<=n;i++) {
+      `
+    }
 
-  cout<<nLastDigit+mLastDigit<<'\n';
+  }
+
+
 
   return 0;
 }

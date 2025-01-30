@@ -16,14 +16,16 @@ int main()
   std::ios::sync_with_stdio(false);
   std::cin.tie(0);
 
-  long long n,m;
-  cin>>n>>m;
+  string firstName1,secondName1;
+  string firstName2,secondName2;
 
-  int nLastDigit,mLastDigit;
-  nLastDigit=n%10;
-  mLastDigit=m%10;
+  cin>>firstName1>>secondName1>>firstName2>>secondName2;
 
-  cout<<nLastDigit+mLastDigit<<'\n';
+  if(secondName1==secondName2) {
+    cout<<"ARE Brothers\n";
+  }else {
+    cout<<"NOT\n";
+  }
 
   return 0;
 }

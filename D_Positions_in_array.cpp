@@ -16,14 +16,17 @@ int main()
   std::ios::sync_with_stdio(false);
   std::cin.tie(0);
 
-  long long n,m;
-  cin>>n>>m;
+  int n;
+  cin>>n;
 
-  int nLastDigit,mLastDigit;
-  nLastDigit=n%10;
-  mLastDigit=m%10;
-
-  cout<<nLastDigit+mLastDigit<<'\n';
+  int arr[n];
+  for(int i=0;i<n;i++)
+    cin>>arr[i];
+  for(int i=0;i<n;i++) {
+    if(arr[i]<=10) {
+      cout<<"A["<<i<<"]"<<" = "<<arr[i]<<endl;
+    }
+  }  
 
   return 0;
 }

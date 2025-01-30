@@ -9,6 +9,7 @@
 #include <sstream>
 #include <iomanip>
 using namespace std;
+#define ll long long
 
 int main()
 {
@@ -16,14 +17,12 @@ int main()
   std::ios::sync_with_stdio(false);
   std::cin.tie(0);
 
-  long long n,m;
-  cin>>n>>m;
-
-  int nLastDigit,mLastDigit;
-  nLastDigit=n%10;
-  mLastDigit=m%10;
-
-  cout<<nLastDigit+mLastDigit<<'\n';
+  string s;
+  cin>>s;
+  if(s[0]>='a' && s[0]<='z') {
+    s[0] = char(toupper(s[0]));
+  }
+  cout<<s<<endl;
 
   return 0;
 }

@@ -16,14 +16,17 @@ int main()
   std::ios::sync_with_stdio(false);
   std::cin.tie(0);
 
-  long long n,m;
-  cin>>n>>m;
+  long long x,y;
+  cin>>x>>y;
 
-  int nLastDigit,mLastDigit;
-  nLastDigit=n%10;
-  mLastDigit=m%10;
+  int summation,multiplication,subtraction;
+  summation=x+y;
+  multiplication=x*y;
+  subtraction=x-y;
 
-  cout<<nLastDigit+mLastDigit<<'\n';
+  cout<<x<<" + "<<y<<" = "<<summation<<'\n';
+  cout<<x<<" * "<<y<<" = "<<multiplication<<'\n';
+  cout<<x<<" - "<<y<<" = "<<subtraction<<'\n';
 
   return 0;
 }

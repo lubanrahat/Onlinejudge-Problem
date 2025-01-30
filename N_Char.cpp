@@ -16,14 +16,16 @@ int main()
   std::ios::sync_with_stdio(false);
   std::cin.tie(0);
 
-  long long n,m;
-  cin>>n>>m;
+  char ch;
+  cin>>ch;
 
-  int nLastDigit,mLastDigit;
-  nLastDigit=n%10;
-  mLastDigit=m%10;
+  if(ch>='A' && ch<='Z') {
+    ch=ch-('A'-'a');
+  }else {
+    ch=ch+('A'-'a');
+  }
 
-  cout<<nLastDigit+mLastDigit<<'\n';
+  cout<<ch<<endl;
 
   return 0;
 }

@@ -16,14 +16,18 @@ int main()
   std::ios::sync_with_stdio(false);
   std::cin.tie(0);
 
-  long long n,m;
-  cin>>n>>m;
+  long long a,b,k;
+  cin>>a>>b>>k;
 
-  int nLastDigit,mLastDigit;
-  nLastDigit=n%10;
-  mLastDigit=m%10;
-
-  cout<<nLastDigit+mLastDigit<<'\n';
+  if(a%k==0 && b%k==0) {
+    cout<<"Both\n";
+  }else if(a%k==0 && b%k!=0) {
+    cout<<"Memo\n";
+  }else if(b%k==0 && a%k!=0) {
+    cout<<"Momo\n";
+  }else if(a%k!=0 && b%k!=0) {
+    cout<<"No One\n";
+  }
 
   return 0;
 }

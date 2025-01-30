@@ -16,14 +16,15 @@ int main()
   std::ios::sync_with_stdio(false);
   std::cin.tie(0);
 
-  long long n,m;
-  cin>>n>>m;
-
-  int nLastDigit,mLastDigit;
-  nLastDigit=n%10;
-  mLastDigit=m%10;
-
-  cout<<nLastDigit+mLastDigit<<'\n';
+  int n;
+  cin>>n;
+  int x=n/365;
+  cout<<x<<" years"<<endl;
+  int a=n-(365*x);
+  int y=a/30;
+  cout<<y<<" months"<<endl;
+  int b=a-(y*30);
+  cout<<b<<" days"<<endl;
 
   return 0;
 }

@@ -16,14 +16,21 @@ int main()
   std::ios::sync_with_stdio(false);
   std::cin.tie(0);
 
-  long long n,m;
-  cin>>n>>m;
+  string a,b;
+  cin>>a;
+  for(int i=a.size()-1;i>=0;i--) {
+    b+=a[i];
+  }
+  int a1,b2;
+  a1=stoi(a);
+  b2=stoi(b);
 
-  int nLastDigit,mLastDigit;
-  nLastDigit=n%10;
-  mLastDigit=m%10;
-
-  cout<<nLastDigit+mLastDigit<<'\n';
+  cout<<b2<<endl;
+  if(a1==b2) {
+    cout<<"YES\n";
+  }else {
+    cout<<"NO\n";
+  }
 
   return 0;
 }

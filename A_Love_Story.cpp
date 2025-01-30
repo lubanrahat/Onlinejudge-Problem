@@ -16,14 +16,26 @@ int main()
   std::ios::sync_with_stdio(false);
   std::cin.tie(0);
 
-  long long n,m;
-  cin>>n>>m;
+  int tt;
+  cin>>tt;
 
-  int nLastDigit,mLastDigit;
-  nLastDigit=n%10;
-  mLastDigit=m%10;
+  string lave = "codeforces";
 
-  cout<<nLastDigit+mLastDigit<<'\n';
+  while(tt--) {
+    string S;
+    cin>>S;
+
+    int cnt = 0;
+
+    for(int i=0;i<S.size();i++) {
+      if(S[i]!=lave[i]) {
+        cnt++;
+      }
+    }
+
+    cout<<cnt<<endl;
+
+  }
 
   return 0;
 }

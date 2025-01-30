@@ -17,15 +17,25 @@ int main()
   std::cin.tie(0);
 
   int a,b;
+  bool v=false;
   cin>>a>>b;
-
-  if(a%b==0) {
-    cout<<"Multiples\n";
-  }else if(b%a==0) {
-    cout<<"Multiples\n";
-  }else {
-    cout<<"No Multiples\n";
+  for(int i=a;i<=b;i++) {
+    int a=i;
+    bool flag=false;
+    while(a>0) {
+      int x=a%10;
+      if(x!=7 && x!=4) {
+        flag=true;
+      }
+      a/=10;
+    }
+    if(!flag) {
+      cout<<i<<" ";
+      v=true;
+    }
   }
+
+  if(!v) cout<<"-1";
 
   return 0;
 }

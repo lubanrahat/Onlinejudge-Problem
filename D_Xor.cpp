@@ -16,14 +16,10 @@ int main()
   std::ios::sync_with_stdio(false);
   std::cin.tie(0);
 
-  long long n,m;
-  cin>>n>>m;
+  int arr[] = {3,6,7,299,30,45,76,23,78,90,123,456,789,12,10};
+  int n = sizeof(arr)/sizeof(int);
 
-  int nLastDigit,mLastDigit;
-  nLastDigit=n%10;
-  mLastDigit=m%10;
-
-  cout<<nLastDigit+mLastDigit<<'\n';
+  
 
   return 0;
 }

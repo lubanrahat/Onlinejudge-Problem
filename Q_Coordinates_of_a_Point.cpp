@@ -16,14 +16,16 @@ int main()
   std::ios::sync_with_stdio(false);
   std::cin.tie(0);
 
-  long long n,m;
-  cin>>n>>m;
+  float x,y;
+  cin>>x>>y;
 
-  int nLastDigit,mLastDigit;
-  nLastDigit=n%10;
-  mLastDigit=m%10;
-
-  cout<<nLastDigit+mLastDigit<<'\n';
+  if(x>0 && y>0) cout<<"Q1";
+  else if(x<0 && y>0) cout<<"Q2";
+  else if(x<0 && y<0) cout<<"Q3";
+  else if(x>0 && y<0) cout<<"Q4";
+  else if(x==0 && y==0) cout<<"Origem";
+  else if(x==0 && y) cout<<"Eixo Y";
+  else if(x && y==0) cout<<"Eixo X";
 
   return 0;
 }

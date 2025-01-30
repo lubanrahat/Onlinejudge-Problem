@@ -16,14 +16,21 @@ int main()
   std::ios::sync_with_stdio(false);
   std::cin.tie(0);
 
-  long long n,m;
-  cin>>n>>m;
-
-  int nLastDigit,mLastDigit;
-  nLastDigit=n%10;
-  mLastDigit=m%10;
-
-  cout<<nLastDigit+mLastDigit<<'\n';
+  int tt;
+  cin>>tt;
+  while(tt--) {
+    int n,count=0;
+    cin>>n;
+    long long sum=0;
+    while(n>0) {
+      if(n%2==1) count++;
+      n/=2;
+    }
+    for(int i=0;i<count;i++) {
+      sum+=pow(2,i);
+    }
+    cout<<sum<<endl;
+  }
 
   return 0;
 }

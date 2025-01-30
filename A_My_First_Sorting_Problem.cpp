@@ -16,14 +16,17 @@ int main()
   std::ios::sync_with_stdio(false);
   std::cin.tie(0);
 
-  long long n,m;
-  cin>>n>>m;
+  int tt;
+  cin>>tt;
+  while(tt--) {
+    int x,y;
+    cin>>x>>y;
 
-  int nLastDigit,mLastDigit;
-  nLastDigit=n%10;
-  mLastDigit=m%10;
-
-  cout<<nLastDigit+mLastDigit<<'\n';
+    if(x>y) {
+      swap(x,y);
+    }
+    cout<<x<<" "<<y<<endl;
+  }
 
   return 0;
 }

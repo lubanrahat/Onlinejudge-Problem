@@ -9,6 +9,7 @@
 #include <sstream>
 #include <iomanip>
 using namespace std;
+#define ll long long
 
 int main()
 {
@@ -16,14 +17,14 @@ int main()
   std::ios::sync_with_stdio(false);
   std::cin.tie(0);
 
-  long long n,m;
-  cin>>n>>m;
-
-  int nLastDigit,mLastDigit;
-  nLastDigit=n%10;
-  mLastDigit=m%10;
-
-  cout<<nLastDigit+mLastDigit<<'\n';
+  int k,n,w;
+  cin>>k>>n>>w;
+  int sum = w*(w+1)/2;
+  if((k*sum-n) < 1) {
+    cout<<"0\n";
+  }else {
+    cout<<(k*sum)-n<<endl;
+  }
 
   return 0;
 }

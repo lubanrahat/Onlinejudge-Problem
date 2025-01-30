@@ -16,14 +16,14 @@ int main()
   std::ios::sync_with_stdio(false);
   std::cin.tie(0);
 
-  long long n,m;
-  cin>>n>>m;
-
-  int nLastDigit,mLastDigit;
-  nLastDigit=n%10;
-  mLastDigit=m%10;
-
-  cout<<nLastDigit+mLastDigit<<'\n';
+  double n;
+  cin>>n;
+  int x = n;
+  if(x==n) {
+    cout<<"int "<<x<<'\n';
+  }else {
+    cout<<"float "<<x<<" "<<n-x<<endl;
+  }
 
   return 0;
 }

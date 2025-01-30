@@ -16,14 +16,22 @@ int main()
   std::ios::sync_with_stdio(false);
   std::cin.tie(0);
 
-  long long n,m;
-  cin>>n>>m;
-
-  int nLastDigit,mLastDigit;
-  nLastDigit=n%10;
-  mLastDigit=m%10;
-
-  cout<<nLastDigit+mLastDigit<<'\n';
+  int tt;
+  cin>>tt;
+  
+  while(tt--) {
+    char ch;
+    cin>>ch;
+    string code = "codeforces";
+    bool found = false;
+    for(char i:code) {
+      if(ch == i) {
+        found = true;
+        break;
+      }
+    }
+    cout<<(found ? "YES":"NO")<<endl;
+  }
 
   return 0;
 }
