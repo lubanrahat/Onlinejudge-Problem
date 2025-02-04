@@ -1,1 +1,2 @@
-lower==uppw
+
+    string s = "WwBWBW";
