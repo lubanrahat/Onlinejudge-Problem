@@ -1,6 +1,6 @@
 /**
  *    Author:  Luban Rahat
- *    Created: 2025-02-06 00:26:20 (GMT+06:00)
+ *    Created: 2025-02-05 20:50:16 (GMT+06:00)
  **/
 #include <bits/stdc++.h>
 using namespace std;
@@ -44,27 +44,40 @@ template <typename T>
 inline void print2D(vector<vector<T>> &v) {
     for (auto &row : v) print(row);
 }
+
+int solve1(vector<int> &A) {
+    int max_streak = 1, cur_streak = 1, N = A.size();
+    for (int i = 1; i < N; i++) {
+        if (A[i] >= A[i - 1]) {
+            cur_streak++;
+        } else {
+            cur_streak = 1;
+        }
+        max_streak = max(max_streak, cur_streak);
+    }
+    return max_streak;
+}
+int ans(vector<int> &A, int X) {
+    int N = A.size();
+    int max_streak = solve1(A); 
+    for (int i = 0; i < N; i++) {
+        vector<int> modified_A = A;
+        modified_A[i] *= X; 
+        max_streak = max(max_streak, solve1(modified_A));
+    }
+
+    return max_streak;
+}
 // Main solve function
 inline void solve() {
-    int n;
-    cin >> n;
-    unordered_map<string,string> ans,has;
-    rep(i,0,n) {
-        string a,b;
-        cin >> a >> b;
-        if(has.find(a) != has.end()) {
-            string s =has[a];
-            ans[s] = b;
-            has.erase(a);
-            has[b] = s;
-        } else {
-            ans[a] = b;
-            has[b] = a;
-        }
-    }
-    cout << ans.size() << endl;
-    for(auto [x,y]: ans) {
-        cout << x << " " << y <<endl;
+    int testCase;
+    cin >> testCase;
+    while (testCase--) {
+        int n,x;
+        cin>>n>>x;
+        VI a(n);
+        read(a);
+        cout<<ans(a,x)<<endl;
     }
 }
 

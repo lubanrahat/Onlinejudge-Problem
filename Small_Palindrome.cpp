@@ -1,6 +1,6 @@
 /**
  *    Author:  Luban Rahat
- *    Created: 2025-02-06 00:26:20 (GMT+06:00)
+ *    Created: 2025-02-05 20:38:13 (GMT+06:00)
  **/
 #include <bits/stdc++.h>
 using namespace std;
@@ -46,25 +46,20 @@ inline void print2D(vector<vector<T>> &v) {
 }
 // Main solve function
 inline void solve() {
-    int n;
-    cin >> n;
-    unordered_map<string,string> ans,has;
-    rep(i,0,n) {
-        string a,b;
-        cin >> a >> b;
-        if(has.find(a) != has.end()) {
-            string s =has[a];
-            ans[s] = b;
-            has.erase(a);
-            has[b] = s;
-        } else {
-            ans[a] = b;
-            has[b] = a;
-        }
-    }
-    cout << ans.size() << endl;
-    for(auto [x,y]: ans) {
-        cout << x << " " << y <<endl;
+    int testCase;
+    cin >> testCase;
+    while (testCase--) {
+        int x,y;
+        cin>>x>>y;
+        vector<char> digits;
+
+        for (int i = 0; i < x / 2; i++) digits.pb('1');
+        for (int i = 0; i < y / 2; i++) digits.pb('2');
+        sort(digits.begin(), digits.end());
+        string first_half(digits.begin(), digits.end());
+
+        string ans = first_half + string(first_half.rbegin(), first_half.rend());
+        cout<<ans<<endl;
     }
 }
 

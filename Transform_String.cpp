@@ -1,6 +1,6 @@
 /**
  *    Author:  Luban Rahat
- *    Created: 2025-02-06 00:26:20 (GMT+06:00)
+ *    Created: 2025-02-05 21:13:53 (GMT+06:00)
  **/
 #include <bits/stdc++.h>
 using namespace std;
@@ -46,25 +46,53 @@ inline void print2D(vector<vector<T>> &v) {
 }
 // Main solve function
 inline void solve() {
-    int n;
-    cin >> n;
-    unordered_map<string,string> ans,has;
-    rep(i,0,n) {
-        string a,b;
-        cin >> a >> b;
-        if(has.find(a) != has.end()) {
-            string s =has[a];
-            ans[s] = b;
-            has.erase(a);
-            has[b] = s;
-        } else {
-            ans[a] = b;
-            has[b] = a;
+    int testCase;
+    cin >> testCase;
+    while (testCase--) {
+        string A,B;
+        cin>>A>>B;
+        int a_len = A.size();
+        int b_len = B.size();
+        if (b_len > a_len) {
+            cout<<"-1"<<endl;
+            continue;
         }
-    }
-    cout << ans.size() << endl;
-    for(auto [x,y]: ans) {
-        cout << x << " " << y <<endl;
+        VI S;
+        int i = a_len - 1;
+        bool possible = true;
+        for (int j = b_len - 1; j >= 0; --j) {
+            char c = B[j];
+            while (i >= 0 && A[i] != c) {
+                --i;
+            }
+            if (i < 0) {
+                possible = false;
+                break;
+            }
+            S.push_back(i);
+            --i;
+        }
+        if (!possible) {
+            cout<<"-1"<<endl;
+            continue;
+        }
+        reverse(all(S));
+        VI R;
+        int s_ptr = 0;
+        for (int idx = 0; idx < a_len; ++idx) {
+            if (s_ptr < S.size() && idx == S[s_ptr]) {
+                ++s_ptr;
+            } else {
+                R.push_back(idx);
+            }
+        }
+        ll sum_r_plus_1 = 0;
+        for (int r : R) {
+            sum_r_plus_1 += (r + 1);
+        }
+        ll n = R.size();
+        ll cost = sum_r_plus_1 - (n * (n - 1)) / 2;
+        cout << cost << '\n';
     }
 }
 

@@ -1,6 +1,6 @@
 /**
  *    Author:  Luban Rahat
- *    Created: 2025-02-06 00:26:20 (GMT+06:00)
+ *    Created: 2025-02-06 00:03:51 (GMT+06:00)
  **/
 #include <bits/stdc++.h>
 using namespace std;
@@ -46,26 +46,29 @@ inline void print2D(vector<vector<T>> &v) {
 }
 // Main solve function
 inline void solve() {
-    int n;
-    cin >> n;
-    unordered_map<string,string> ans,has;
-    rep(i,0,n) {
-        string a,b;
-        cin >> a >> b;
-        if(has.find(a) != has.end()) {
-            string s =has[a];
-            ans[s] = b;
-            has.erase(a);
-            has[b] = s;
-        } else {
-            ans[a] = b;
-            has[b] = a;
+    int testCase;
+    cin >> testCase;
+    while (testCase--) {
+        int n;
+        cin >> n;
+        VI A(n);
+        read(A);
+        rep(i,0,n) {
+            rep(j,i+1,n) {
+                if(A[i] > A[j]) {
+                    swap(A[i],A[j]);
+                }
+            }
         }
-    }
-    cout << ans.size() << endl;
-    for(auto [x,y]: ans) {
-        cout << x << " " << y <<endl;
-    }
+        print(A);
+        unordered_map<int,int> mp;
+        auto it = mp.find(10);
+        if(it != mp.end()) {
+            mp.erase(it);
+        } else {
+            cout<<"Not found!"<<endl;
+        }
+     }
 }
 
 int32_t main() {

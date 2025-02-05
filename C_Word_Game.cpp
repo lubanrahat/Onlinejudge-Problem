@@ -1,14 +1,14 @@
 /**
  *    Author:  Luban Rahat
- *    Created: 2025-02-06 00:26:20 (GMT+06:00)
+ *    Created: 2025-02-06 00:50:43 (GMT+06:00)
  **/
 #include <bits/stdc++.h>
 using namespace std;
 
 // Loop macros for convenience
-#define rep(i,a,n) for (int i=a;i<n;i++)
-#define per(i,a,n) for (int i=n-1;i>=a;i--)
-#define tr(it,a) for (auto it=a.begin();it!=a.end();++it)
+#define rep(i, a, n) for (int i = a; i < n; i++)
+#define per(i, a, n) for (int i = n - 1; i >= a; i--)
+#define tr(it, a) for (auto it = a.begin(); it != a.end(); ++it)
 // Commonly used macros for ease
 #define pb push_back
 #define eb emplace_back
@@ -46,25 +46,10 @@ inline void print2D(vector<vector<T>> &v) {
 }
 // Main solve function
 inline void solve() {
-    int n;
-    cin >> n;
-    unordered_map<string,string> ans,has;
-    rep(i,0,n) {
-        string a,b;
-        cin >> a >> b;
-        if(has.find(a) != has.end()) {
-            string s =has[a];
-            ans[s] = b;
-            has.erase(a);
-            has[b] = s;
-        } else {
-            ans[a] = b;
-            has[b] = a;
-        }
-    }
-    cout << ans.size() << endl;
-    for(auto [x,y]: ans) {
-        cout << x << " " << y <<endl;
+    int testCase;
+    cin >> testCase;
+    while (testCase--) {
+        
     }
 }
 
